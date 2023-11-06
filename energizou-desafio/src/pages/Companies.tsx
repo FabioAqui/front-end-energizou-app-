@@ -17,6 +17,15 @@ interface Empresa {
 
 const Companies: React.FC = () => {
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
+  const [searchId, setSearchId] = useState<number | null>(null);
+
+  const handleSearch = () => {
+    if (searchId !== null) {
+      // Redirecionar para a página de pesquisa com o ID inserido
+      window.location.href = `/search/${searchId}`;
+    }
+  };
+
 
   useEffect(() => {
     const fetchAllEmpresas = async () => {
@@ -39,6 +48,7 @@ const Companies: React.FC = () => {
     }
   };
 
+
   return (
     <div>
       <h1>Empresas cadastradas</h1>
@@ -56,7 +66,7 @@ const Companies: React.FC = () => {
             <button className="delete" onClick={() => handleDelete(empresa.id)}>
               Delete
             </button>
-            <button className="update" onClick={() => handleDelete(empresa.id)}>
+            <button className="update">
                 <Link to={`/update/${empresa.id}`} style={{ color: "inherit", textDecoration: "none" }}>
                 Atualizar
                 </Link>
@@ -70,6 +80,17 @@ const Companies: React.FC = () => {
           Adicionar nova empresa
         </Link>
       </button>
+      <div>
+        <input
+            type="number"
+            placeholder="digite o id"
+            value={searchId || ""}
+            onChange={(e) => setSearchId(parseInt(e.target.value))}
+        />
+         <button className="getEmpresa" onClick={handleSearch}>
+          Pesquisar empresa pelo id
+        </button>
+      </div>
     </div>
   );
 };
