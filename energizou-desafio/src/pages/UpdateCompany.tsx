@@ -65,7 +65,7 @@ const UpdateCompanies: React.FC = () => {
 
   return (
     <div className="form">
-      <h1>Update the Company</h1>
+      <h1>Atualizar Empresa</h1>
       <input
         type="text"
         placeholder="Nome da Empresa"
@@ -129,8 +129,8 @@ const UpdateCompanies: React.FC = () => {
         value={empresa.email}
         onChange={handleChange}
       />
-      <button onClick={handleClick}>Update</button>
-      <Link to="/">See all Companies</Link>
+      <button onClick={handleClick}>Atualizar</button>
+      <Link to="/" className="verTudo">Ver todas as empresas</Link>
     </div>
   );
 };

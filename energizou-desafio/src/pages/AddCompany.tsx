@@ -131,7 +131,7 @@ const AddCompany: React.FC = () => {
         onChange={handleChange}
       />
       <button onClick={handleClick}>Adicionar</button>
-      <Link to="/">Ver todas as empresas</Link>
+      <Link to="/" className="verTudo">Ver todas as empresas</Link>
     </div>
   );
 };

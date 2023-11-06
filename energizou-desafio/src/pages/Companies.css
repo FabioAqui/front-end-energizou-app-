@@ -1,0 +1,33 @@
+.empresa {
+  background-color: whitesmoke;
+  display: inline-block;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 3px;
+}
+button {
+  padding: 2em;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.delete {
+  background-color: #f84949;
+}
+.update {
+  background-color: #57f057;
+}
+input {
+  display: inline-block;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 3px;
+}
+.verTudo {
+  text-decoration: none;
+  color: black;
+  padding: 1em;
+}
+.verTudo:hover {
+  color: grey;
+}
+/*# sourceMappingURL=Companies.css.map */
