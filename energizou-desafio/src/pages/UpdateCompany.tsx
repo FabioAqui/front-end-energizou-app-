@@ -40,7 +40,7 @@ const UpdateCompanies: React.FC = () => {
   const handleClick = async (e: FormEvent) => {
     e.preventDefault();
 
-    // Adicione a validação para o formato do CNPJ, CEP e e-mail aqui
+    // Validação do formato CNPJ, CEP e e-mail
     if (!/^[0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}-[0-9]{2}$/.test(empresa.cnpj)) {
       setError(true);
       return;
@@ -55,7 +55,7 @@ const UpdateCompanies: React.FC = () => {
     }
 
     try {
-      await axios.put(`http://localhost:3333/companies${empresaId}`, empresa);
+      await axios.put(`http://localhost:3333/companies/${empresaId}`, empresa);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -130,7 +130,6 @@ const UpdateCompanies: React.FC = () => {
         onChange={handleChange}
       />
       <button onClick={handleClick}>Update</button>
-      {error && "Something went wrong! Check the CNPJ, CEP, and email formats."}
       <Link to="/">See all Companies</Link>
     </div>
   );

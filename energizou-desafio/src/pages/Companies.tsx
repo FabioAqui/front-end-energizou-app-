@@ -21,7 +21,6 @@ const Companies: React.FC = () => {
 
   const handleSearch = () => {
     if (searchId !== null) {
-      // Redirecionar para a página de pesquisa com o ID inserido
       window.location.href = `/search/${searchId}`;
     }
   };

@@ -21,7 +21,6 @@ const GetCompany: React.FC = () => {
 
   useEffect(() => {
     if (id) {
-      // Verificar se o 'id' é um número válido
       const parsedId = parseInt(id, 10);
       if (!isNaN(parsedId)) {
         const fetchEmpresa = async (id: number) => {
